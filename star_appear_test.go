@@ -50,6 +50,9 @@ func TestStarAppear(t *testing.T) {
 	input := 5
 
 	results := StarAppear(input)
+
+	fmt.Println(results)
+
 	for i, result := range results {
 		fmt.Printf("result %d: %s\n", i+1, result)
 	}
