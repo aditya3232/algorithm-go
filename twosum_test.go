@@ -17,8 +17,7 @@ func TwoSum(arr []int, target int) []int {
 		for j := i + 1; j < len(arr); j++ {
 			sum := arr[i] + arr[j]
 			if sum == target {
-				result = append(result, i)
-				result = append(result, j)
+				result = append(result, i, j)
 			}
 		}
 	}
