@@ -1,4 +1,4 @@
-package algorithmgo
+package array
 
 import (
 	"fmt"
@@ -24,19 +24,19 @@ import (
 
 func StarAppear(arr int) []string {
 	var results []string
-	totalLen := arr + 3
+	totalRows := arr + 3
 
 	for i := 1; i <= arr; i++ {
 		var sb strings.Builder
 
-		for j := 1; j <= totalLen; j++ {
+		for j := 1; j <= totalRows; j++ {
 			if j == i+1 || j == i+2 {
 				sb.WriteString("*")
 			} else {
 				sb.WriteString(fmt.Sprintf("%d", j))
 			}
 
-			if j < totalLen {
+			if j < totalRows {
 				sb.WriteString(",")
 			}
 		}
@@ -52,6 +52,7 @@ func TestStarAppear(t *testing.T) {
 	results := StarAppear(input)
 
 	fmt.Println(results)
+	fmt.Println()
 
 	for i, result := range results {
 		fmt.Printf("result %d: %s\n", i+1, result)

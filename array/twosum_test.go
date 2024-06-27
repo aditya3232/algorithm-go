@@ -1,4 +1,4 @@
-package algorithmgo
+package array
 
 import (
 	"fmt"
@@ -16,8 +16,10 @@ func TwoSum(arr []int, target int) []int {
 	for i := 0; i < len(arr); i++ {
 		for j := i + 1; j < len(arr); j++ {
 			sum := arr[i] + arr[j]
+
 			if sum == target {
 				result = append(result, i, j)
+				return result
 			}
 		}
 	}
@@ -27,9 +29,8 @@ func TwoSum(arr []int, target int) []int {
 }
 
 func TestTwoSum(t *testing.T) {
-	arr := []int{2, 3, 1, 4}
-	target := 6
+	arr := []int{1, 3, 4, 2, 5}
+	result := TwoSum(arr, 7)
 
-	result := TwoSum(arr, target)
 	fmt.Println("result: ", result)
 }
